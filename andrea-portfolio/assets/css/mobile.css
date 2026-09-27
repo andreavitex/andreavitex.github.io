@@ -1,0 +1,35 @@
+/* Mobile-only compact layout: desktop rules remain untouched. */
+@media (max-width: 800px) {
+  .section { padding: 78px 5vw; }
+
+  .hero {
+    min-height: 100svh;
+    padding-top: 86px;
+    padding-bottom: 86px;
+  }
+
+  h1 { font-size: clamp(56px, 16vw, 74px); margin: 22px 0; }
+  .hero-copy { max-width: 31rem; font-size: 15px; }
+  .hero-meta { bottom: 24px; left: 5vw; right: 5vw; gap: 10px; font-size: 9px; }
+
+  .section-head { margin-bottom: 28px; }
+  .grid { gap: 38px 16px; }
+  .card-info { padding-top: 12px; margin-top: 8px; }
+  .card-info h3 { font-size: 26px; }
+
+  .project-design-grid { gap: 8px; aspect-ratio: auto; height: min(34vw, 132px); }
+  .project-design-grid img { min-height: 0; object-position: center; }
+  .project-mockup { margin-top: -14px; }
+  .project-mockup-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+  .project-mockup-card img { aspect-ratio: 1 / 1; }
+  .project-mockup-grid--two { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .project-mockup-grid--two img { aspect-ratio: 1.55 / 1; }
+
+  .other-projects { margin-top: -14px; }
+  .other-projects-grid { gap: 18px 10px; }
+  .other-project-card figcaption { font-size: 9px; line-height: 1.35; }
+
+  .tools-showcase { padding: 68px 0 38px; }
+  .tools-showcase-head { margin-bottom: 28px; }
+  .contact h2 { margin: 30px 0 18px; }
+}

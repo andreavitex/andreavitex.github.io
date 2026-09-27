@@ -2,7 +2,7 @@
   isolation: isolate;
   background:
     linear-gradient(90deg, rgba(10, 10, 10, .2), rgba(10, 10, 10, .03) 68%),
-    url('../images/andrea-hero.png') center / cover no-repeat;
+    url('../images/andrea-hero.jpg') center / cover no-repeat;
 }
 
 .hero::before {
