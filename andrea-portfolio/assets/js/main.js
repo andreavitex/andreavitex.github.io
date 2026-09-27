@@ -1,19 +1,29 @@
-const base='andrea-portfolio/';
-const projects={
-camugin:{title:'Camügin',meta:'Product / Campaign · Visual direction',images:['camugin-1.jpg','camugin-2.jpg'],text:'Product communication developed from visual direction to final applications.'},
+ügin',meta:'Product / Campaign · Visual direction',images:['camugin-1.jpg','camugin-2.jpg'],text:'Product communication developed from visual direction to final applications.'},
 cellini:{title:'Cellini Caffè',meta:'Editorial / Retail · Visual system',images:['cellini-1.jpg','cellini-2.jpg'],text:'Editorial and product communication for a contemporary Italian roastery.'},
-brugal:{title:'Brugal 1888',meta:'Editorial / Brand · Premium communication',images:['brugal-1.jpg','brugal-4.jpg','brugal-6.jpg','brugal-7.jpg'],text:'A premium editorial system built around image, typography and brand expression.'},
+brugal:{title:'Brugal 1888',meta:'Editorial / Brand · Premium communication',images:['brugal-1.jpg','brugal-2.jpg','brugal-3.jpg','brugal-4.jpg'],text:'A premium editorial system built around image, typography and brand expression.'},
 garmin:{title:'Garmin',meta:'Digital / Product · Wellness communication',images:['garmin-1.jpg','garmin-2.jpg'],text:'Digital product communication within the Garmin wellness ecosystem.'},
 macallan:{title:'The Macallan · Spirit',meta:'Event / Editorial · Visual storytelling',images:['macallan-1.jpg','macallan-2.jpg'],text:'Premium event communication combining editorial composition and visual storytelling.'},
-ginuensis:{title:'Gin Ginuensis',meta:'Packaging · Brand expression',images:['ginuensis-1.jpg'],text:'Packaging and local brand expression focused on a distinctive visual presence.'}
+ginuensis:{title:'Gin Ginuensis',meta:'Packaging · Brand expression',images:['ginuensis-1.jpg','ginuensis-2-back-label.jpg'],text:'Packaging and local brand expression focused on a distinctive visual presence.'}
 };
+const otherProjects=[
+  {title:'Degré Cosmetica',image:'other-degre.webp'},
+  {title:'Riunione FjordiSalmone',image:'other-fjordi-salmone.jpg'},
+  {title:'Bubbles Restaurant MSC',image:'other-plaque-bubbles.png'},
+  {title:'Les Dunes Restaurant MSC',image:'other-plaque-les-dunes.png'},
+  {title:'La Foglia Restaurant MSC',image:'other-plaque-la-foglia.png'},
+  {title:'ONU Global Coalition Website',image:'other-web-global-coalition-proposal.jpg'},
+  {title:'Politi Odontoiatra Landing Page',image:'other-web-politi-proposal.jpg'},
+  {title:'Altec Landing Page',image:'other-web-altec-proposal.jpg'}
+];
 const modal=document.querySelector('.modal'),image=document.querySelector('#modal-image'),stage=document.querySelector('#modal-image-stage'),title=document.querySelector('.modal-title'),kicker=document.querySelector('#modal-kicker'),counter=document.querySelector('#modal-counter'),prev=document.querySelector('#modal-prev'),next=document.querySelector('#modal-next');
 let currentProject=null,currentImage=0,pointerStartX=null;
 function renderImage(){
   if(!currentProject)return;
   const src=currentProject.images[currentImage];
   image.src=base+'assets/images/'+src;
-  image.alt=currentProject.title+' — immagine '+(currentImage+1);
+  const imageTitle=currentProject.titles?.[currentImage]||currentProject.title;
+  title.textContent=imageTitle;
+  image.alt=imageTitle+' — immagine '+(currentImage+1);
   counter.textContent=String(currentImage+1).padStart(2,'0')+' / '+String(currentProject.images.length).padStart(2,'0');
   const multiple=currentProject.images.length>1;
   prev.hidden=!multiple; next.hidden=!multiple;
@@ -23,7 +33,16 @@ function openProject(key){
   if(!p)return;
   currentProject=p;currentImage=0;
   kicker.textContent=p.meta;
-  title.textContent=p.title;
+  renderImage();
+  modal.classList.add('open');
+  modal.setAttribute('aria-hidden','false');
+  document.body.style.overflow='hidden';
+}
+function openOtherProject(index){
+  if(!otherProjects[index])return;
+  currentProject={title:'Altri progetti',meta:'07 · SELEZIONE',titles:otherProjects.map(project=>project.title),images:otherProjects.map(project=>project.image)};
+  currentImage=index;
+  kicker.textContent=currentProject.meta;
   renderImage();
   modal.classList.add('open');
   modal.setAttribute('aria-hidden','false');
@@ -42,6 +61,12 @@ function moveImage(direction){
   renderImage();
 }
 document.querySelectorAll('.card').forEach(card=>card.addEventListener('click',()=>openProject(card.dataset.project)));
+document.querySelectorAll('[data-other-project]').forEach(card=>{
+  card.addEventListener('click',()=>openOtherProject(Number(card.dataset.otherProject)));
+  card.addEventListener('keydown',event=>{
+    if(event.key==='Enter'||event.key===' '){event.preventDefault();openOtherProject(Number(card.dataset.otherProject));}
+  });
+});
 document.querySelector('#modal-close').addEventListener('click',close);
 prev.addEventListener('click',event=>{event.stopPropagation();moveImage(-1)});
 next.addEventListener('click',event=>{event.stopPropagation();moveImage(1)});
