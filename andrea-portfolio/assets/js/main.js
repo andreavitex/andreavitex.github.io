@@ -1,7 +1,9 @@
-ügin',meta:'Product / Campaign · Visual direction',images:['camugin-1.jpg','camugin-2.jpg'],text:'Product communication developed from visual direction to final applications.'},
+const base='andrea-portfolio/';
+const projects={
+camugin:{title:'Camügin',meta:'Product / Campaign · Visual direction',images:['camugin-1.jpg','camugin-2.jpg'],text:'Product communication developed from visual direction to final applications.'},
 cellini:{title:'Cellini Caffè',meta:'Editorial / Retail · Visual system',images:['cellini-1.jpg','cellini-2.jpg'],text:'Editorial and product communication for a contemporary Italian roastery.'},
 brugal:{title:'Brugal 1888',meta:'Editorial / Brand · Premium communication',images:['brugal-1.jpg','brugal-2.jpg','brugal-3.jpg','brugal-4.jpg'],text:'A premium editorial system built around image, typography and brand expression.'},
-garmin:{title:'Garmin',meta:'Digital / Product · Wellness communication',images:['garmin-1.jpg','garmin-2.jpg'],text:'Digital product communication within the Garmin wellness ecosystem.'},
+garmin:{title:'Garmin',meta:'Digital / Product · Wellness communication',images:['garmin-1-cropped.jpg','garmin-2-cropped.jpg'],text:'Digital product communication within the Garmin wellness ecosystem.'},
 macallan:{title:'The Macallan · Spirit',meta:'Event / Editorial · Visual storytelling',images:['macallan-1.jpg','macallan-2.jpg'],text:'Premium event communication combining editorial composition and visual storytelling.'},
 ginuensis:{title:'Gin Ginuensis',meta:'Packaging · Brand expression',images:['ginuensis-1.jpg','ginuensis-2-back-label.jpg'],text:'Packaging and local brand expression focused on a distinctive visual presence.'}
 };
