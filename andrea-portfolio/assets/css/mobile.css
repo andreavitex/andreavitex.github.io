@@ -21,7 +21,7 @@
   .project-design-grid img { min-height: 0; object-position: center; }
   .project-mockup { margin-top: -14px; }
   .project-mockup-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
-  .project-mockup-card img { aspect-ratio: 1 / 1; }
+  .project-mockup-card img { aspect-ratio: 1 / 1; cursor: pointer; }
   .project-mockup-grid--two { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .project-mockup-grid--two img { aspect-ratio: 1.55 / 1; }
 

@@ -185,7 +185,7 @@
 .project-mockup{grid-column:1 / -1;margin:-40px 0 0;padding:0;border:0}
 .project-mockup-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
 .project-mockup-card{margin:0;min-width:0}
-.project-mockup-card img{display:block;width:100%;aspect-ratio:4 / 5;object-fit:cover;filter:saturate(.92)}
+.project-mockup-card img{display:block;width:100%;aspect-ratio:4 / 5;object-fit:cover;filter:saturate(.92);cursor:pointer}
 .project-mockup-grid--two{grid-template-columns:repeat(2,minmax(0,1fr))}
 .project-mockup-grid--two img{aspect-ratio:2 / 1;object-fit:contain;background:#c8c8c8}
 /* A deliberately single gallery for miscellaneous work: no split between files and mockups. */

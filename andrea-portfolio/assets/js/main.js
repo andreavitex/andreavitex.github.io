@@ -17,6 +17,13 @@ const otherProjects=[
   {title:'Politi Odontoiatra Landing Page',image:'other-web-politi-proposal.jpg'},
   {title:'Altec Landing Page',image:'other-web-altec-proposal.jpg'}
 ];
+const mockupProjects={
+  camugin:{title:'Camügin — Mockup',meta:'PRODOTTO / CAMPAGNA',images:['camugin-mockup-bar.png','camugin-mockup-liguria.png','camugin-mockup-minimal.png']},
+  cellini:{title:'Cellini Caffè — Mockup',meta:'EDITORIALE / RETAIL',images:['cellini-mockup-open.png','cellini-mockup-spread.png','cellini-mockup-closed.png']},
+  brugal:{title:'Brugal 1888 — Mockup',meta:'EDITORIALE / BRAND',images:['brugal-mockup-exterior.png','brugal-mockup-interior.png','brugal-mockup-cover.png']},
+  garmin:{title:'Garmin — Mockup',meta:'DIGITALE / PRODOTTO',images:['garmin-mockup-interior.png','garmin-mockup-exterior.png']},
+  ginuensis:{title:'Gin Ginuensis — Mockup',meta:'PACKAGING',images:['ginuensis-mockup-coast.png','ginuensis-mockup-bar.png','ginuensis-mockup-minimal.png']}
+};
 const modal=document.querySelector('.modal'),image=document.querySelector('#modal-image'),stage=document.querySelector('#modal-image-stage'),title=document.querySelector('.modal-title'),kicker=document.querySelector('#modal-kicker'),counter=document.querySelector('#modal-counter'),prev=document.querySelector('#modal-prev'),next=document.querySelector('#modal-next');
 let currentProject=null,currentImage=0,pointerStartX=null;
 function renderImage(){
@@ -50,6 +57,16 @@ function openOtherProject(index){
   modal.setAttribute('aria-hidden','false');
   document.body.style.overflow='hidden';
 }
+function openMockupProject(key,index){
+  const p=mockupProjects[key];
+  if(!p)return;
+  currentProject=p;currentImage=index;
+  kicker.textContent=p.meta;
+  renderImage();
+  modal.classList.add('open');
+  modal.setAttribute('aria-hidden','false');
+  document.body.style.overflow='hidden';
+}
 function close(){
   modal.classList.remove('open');
   modal.setAttribute('aria-hidden','true');
@@ -67,6 +84,19 @@ document.querySelectorAll('[data-other-project]').forEach(card=>{
   card.addEventListener('click',()=>openOtherProject(Number(card.dataset.otherProject)));
   card.addEventListener('keydown',event=>{
     if(event.key==='Enter'||event.key===' '){event.preventDefault();openOtherProject(Number(card.dataset.otherProject));}
+  });
+});
+const mockupKeys=['camugin','cellini','brugal','garmin','ginuensis'];
+document.querySelectorAll('.project-mockup').forEach((section,sectionIndex)=>{
+  const key=mockupKeys[sectionIndex];
+  section.querySelectorAll('img').forEach((mockup,index)=>{
+    mockup.tabIndex=0;
+    mockup.setAttribute('role','button');
+    mockup.setAttribute('aria-label','Apri mockup '+(index+1)+' di '+mockupProjects[key].title);
+    mockup.addEventListener('click',()=>openMockupProject(key,index));
+    mockup.addEventListener('keydown',event=>{
+      if(event.key==='Enter'||event.key===' '){event.preventDefault();openMockupProject(key,index);}
+    });
   });
 });
 document.querySelector('#modal-close').addEventListener('click',close);
