@@ -1,11 +1,11 @@
 const base='../andrea-portfolio/';
 const projects={
-camugin:{title:'Camügin',meta:'Product / Campaign · Visual direction',images:['camugin-1.jpg','camugin-2.jpg'],text:'Product communication developed from visual direction to final applications.'},
-cellini:{title:'Cellini Caffè',meta:'Editorial / Retail · Visual system',images:['cellini-1.jpg','cellini-2.jpg'],text:'Editorial and product communication for a contemporary Italian roastery.'},
-brugal:{title:'Brugal 1888',meta:'Editorial / Brand · Premium communication',images:['brugal-1.jpg','brugal-2.jpg','brugal-3.jpg','brugal-4.jpg'],text:'A premium editorial system built around image, typography and brand expression.'},
-garmin:{title:'Garmin',meta:'Digital / Product · Wellness communication',images:['garmin-1-cropped.jpg','garmin-2-cropped.jpg'],text:'Digital product communication within the Garmin wellness ecosystem.'},
-macallan:{title:'The Macallan · Spirit',meta:'Event / Editorial · Visual storytelling',images:['macallan-1.jpg','macallan-2.jpg'],text:'Premium event communication combining editorial composition and visual storytelling.'},
-ginuensis:{title:'Gin Ginuensis',meta:'Packaging · Brand expression',images:['ginuensis-1.jpg','ginuensis-2-back-label.jpg'],text:'Packaging and local brand expression focused on a distinctive visual presence.'}
+camugin:{title:'Camügin',meta:'VISUAL IDENTITY / PACKAGING',images:['camugin-1.jpg','camugin-2.jpg'],text:'Visual identity developed from the client brief, with coordinated graphic design, packaging and stickers produced for the final printed materials.'},
+cellini:{title:'Cellini Caffè',meta:'EDITORIAL / PRINT',images:['cellini-1.jpg','cellini-2.jpg'],text:'Promotional brochure designed around the existing Cellini Caffè brand identity, with layout development and artwork preparation for the final printed brochure.'},
+brugal:{title:'Brugal 1888',meta:'ARTWORK ADAPTATION / PREPRESS',images:['brugal-1.jpg','brugal-2.jpg','brugal-3.jpg','brugal-4.jpg'],text:'Technical adaptation and prepress preparation of existing branded artwork for print, preserving the original design and visual identity.'},
+garmin:{title:'Garmin',meta:'EDITORIAL / PRINT',images:['garmin-1-cropped.jpg','garmin-2-cropped.jpg'],text:'Promotional brochure design and layout development, including print-ready artwork preparation for the final brochure, which was produced in print.'},
+macallan:{title:'The Macallan · Spirit',meta:'EDITORIAL / PRINT',images:['macallan-1.jpg','macallan-2.jpg'],text:'Existing branded materials reworked into a new folded brochure, with layout adaptation respecting the original visual identity, then produced in print.'},
+ginuensis:{title:'Gin Ginuensis',meta:'VISUAL IDENTITY / PACKAGING',images:['ginuensis-1.jpg','ginuensis-2-back-label.jpg'],text:'Visual identity developed from the client brief, including front and back labels, coordinated stickers and packaging, all produced in print.'}
 };
 const otherProjects=[
   {title:'Degré Cosmetica',image:'other-degre.webp'},
@@ -21,7 +21,7 @@ const mockupProjects={
   camugin:{title:'Camügin — Mockup',meta:'PRODUCT / CAMPAIGN',images:['camugin-mockup-bar.png','camugin-mockup-liguria.png','camugin-mockup-minimal.png']},
   cellini:{title:'Cellini Caffè — Mockup',meta:'EDITORIAL / RETAIL',images:['cellini-mockup-open.png','cellini-mockup-spread.png','cellini-mockup-closed.png']},
   brugal:{title:'Brugal 1888 — Mockup',meta:'EDITORIAL / BRAND',images:['brugal-mockup-exterior.png','brugal-mockup-interior.png','brugal-mockup-cover.png']},
-  garmin:{title:'Garmin — Mockup',meta:'DIGITAL / PRODUCT',images:['garmin-mockup-interior.png','garmin-mockup-exterior.png']},
+  garmin:{title:'Garmin — Mockup',meta:'EDITORIAL / PRINT',images:['garmin-mockup-interior.png','garmin-mockup-exterior.png']},
   ginuensis:{title:'Gin Ginuensis — Mockup',meta:'PACKAGING',images:['ginuensis-mockup-coast.png','ginuensis-mockup-bar.png','ginuensis-mockup-minimal.png']}
 };
 const modal=document.querySelector('.modal'),image=document.querySelector('#modal-image'),stage=document.querySelector('#modal-image-stage'),title=document.querySelector('.modal-title'),kicker=document.querySelector('#modal-kicker'),counter=document.querySelector('#modal-counter'),prev=document.querySelector('#modal-prev'),next=document.querySelector('#modal-next');
